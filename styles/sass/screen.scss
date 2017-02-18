@@ -1,0 +1,74 @@
+@import "compass";
+@import "compass/reset";
+
+html,
+body {
+height:100%;
+}
+body {    
+background-color: #121314;
+font-family: monospace,'Helvetica Neue',Helvetica,Arial,sans-serif;
+color: #dfe0e6;
+}
+.title{
+margin-bottom: 50px;
+font-size: 32px;
+font-weight: 500;
+}
+.tic-tac-toe{
+margin-left: auto;
+margin-right: auto;
+width: 300px;
+position: absolute;
+top: 25%;
+left: 50%;
+height: auto;
+transform: translate(-50%, -50%);
+}
+.info{
+font-size:12px;
+bottom:-8%;
+left:50%;
+width:100%;
+position:absolute;
+transform: translate(-50%, 0%);
+}
+.cell{
+border: 1px solid #dfe0e6;
+width: 98px;
+height: 90px;
+float: left;
+text-align: center;
+}
+#cell-0, 
+#cell-3, 
+#cell-6{
+border-left: 0px;
+}
+#cell-0, 
+#cell-1, 
+#cell-2{
+border-top: 0px;
+}
+#cell-2, 
+#cell-5, 
+#cell-8{
+border-right: 0px;
+}
+#cell-6, 
+#cell-7, 
+#cell-8{
+border-bottom: 0px;
+}
+#player-turn{
+margin-top: 340px;
+font-size: 22px;
+font-weight: 500;
+font-family: "proxima_nova",'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.text-red{
+color: #d63232;
+}
+.text-blue{
+color: #4b9ac1;
+}
