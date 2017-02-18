@@ -87,7 +87,7 @@ $(".cell").click(function(event) {
     }
 });
 
-$('#new-game').click(function() {
+$('.new-game').click(function() {
     location.reload();
 });
 
