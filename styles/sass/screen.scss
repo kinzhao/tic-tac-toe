@@ -23,15 +23,7 @@ position: absolute;
 top: 25%;
 left: 50%;
 height: auto;
-transform: translate(-50%, -50%);
-}
-.info{
-font-size:12px;
-bottom:-8%;
-left:50%;
-width:100%;
-position:absolute;
-transform: translate(-50%, 0%);
+transform: translate(-50%, -25%);
 }
 .cell{
 border: 1px solid #dfe0e6;
@@ -61,10 +53,22 @@ border-right: 0px;
 border-bottom: 0px;
 }
 #player-turn{
-margin-top: 340px;
+width: 100%;
+bottom: -20%;
+left: 50%;
+position: absolute;
+transform: translate(-50%);
 font-size: 22px;
 font-weight: 500;
 font-family: "proxima_nova",'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.info{
+font-size:12px;
+bottom:-35%;
+left:50%;
+width:100%;
+position:absolute;
+transform: translate(-50%);
 }
 .text-red{
 color: #d63232;
