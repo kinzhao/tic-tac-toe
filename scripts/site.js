@@ -5,6 +5,8 @@ var game = true,
     message = 'Player <span class="text-red">O</span>  Starts',
     playerTurn = $("#player-turn"),
     player = "",
+    playerO = 'Player <span class="text-red">O</span> Turn',
+    playerX = 'Player <span class="text-blue">X</span> Turn',
     count = 0,
     board = {"cell-0": "",
              "cell-1": "",
@@ -18,19 +20,20 @@ var game = true,
 
 
 var playGame = function(){
-    if(game && (count < 9)){
+    if(game && (count < 9) && playing){
         display = '<i class="fa fa-circle-o fa-5x text-red" aria-hidden="true"></i>';
         player = "O";
-        message = 'Player <span class="text-blue">X</span> Turn';
-    } else if(!game && (count < 9)){
+        message = playerX;
+    } else if(!game && (count < 8) && playing){
         display = '<i class="fa fa-times fa-5x text-blue" aria-hidden="true"></i>';
         player = "X";
-        message = 'Player <span class="text-red">O</span> Turn';
-    } else{
-        message = '<span>STALEMATE!!</span>';
+        message = playerO;
     }
     game = !game;
     count += 1;
+    if(count === 9 && playing){
+        message = '<span>STALEMATE!!</span>';
+    }
     playerTurn.html(message);
 }
 
@@ -71,10 +74,10 @@ var checkBoard = function(){
 
 playerTurn.html(message);
 $(".cell").click(function(event) {
-    if ($(".cell").is(':empty') && playing === true){
+    if ($(".cell").is(':empty') && playing){
         var id = $(this).attr('id');
         console.log(id + " was clicked\ncount: " + count);
-        if ($("#"+id+"").is(':empty') && playing === true){
+        if ($("#"+id+"").is(':empty') && playing){
             playGame();
             $("#"+id+"").html(display);
             board[""+id] = player;
